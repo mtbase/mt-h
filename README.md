@@ -42,6 +42,7 @@ followed by an argument.
 
 #### Sample usage
  `java -jar mt-dbgen.jar -h` &rarr; displays the help message
+
  `java -jar mt-dbgen.jar -s 1 -t 10 -m uniform` &rarr; generates 1GB of data
  for 10 tenants and with a uniform distribution
 
