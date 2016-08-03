@@ -18,13 +18,14 @@ Do `mvn clean package` in order to generate the executable under
 
 Run the data generator with `java -jar ./target/mt-dbgen.jar`.
 
-The output of 'mt-dbgen' is controlled by a combination of command line
-options. They are single letter flags preceded by a dash and potentially
+The output of `mt-dbgen` is controlled by a combination of command line
+options. They are single-letter flags preceded by a dash and potentially
 followed by an argument.
 
 #### Command Line Options
 ```
- -f <arg>   -- set the output files format <oracle (with separator at end of each line)|postgres (no separator at line end)> (default:'oracle')
+ -f <arg>   -- set the output files format <oracle (with separator at end of each line)|postgres
+               (no separator at line end)> (default:'oracle')
  -h         -- display this message
  -m <arg>   -- set distribution mode (uniform=default, zipf
  -o <arg>   -- set the output directory (default: 'output'
@@ -38,9 +39,11 @@ followed by an argument.
  -T <arg>   -- generate tables
  -o <arg>   -- output path
 ```
- Sample usage:
- `java -jar mt-dbgen.jar -h` --> displays the help message
- `java -jar mt-dbgen.jar -s 1 -t 10 -m uniform` --> generates 1GB of data for 10 tenants and with a uniform distribution
+
+#### Sample usage
+ `java -jar mt-dbgen.jar -h` &rarr; displays the help message
+ `java -jar mt-dbgen.jar -s 1 -t 10 -m uniform` &rarr; generates 1GB of data
+ for 10 tenants and with a uniform distribution
 
 ### What does mt-dbgen generate?
 mt-dbgen generates (at least) 11 separate ascii files in the `output` folder.
