@@ -58,6 +58,7 @@
                     <artifactId>maven-surefire-plugin</artifactId>
                     <configuration combine.children="append">
                         <argLine>-Xmx2g -Xms2g</argLine>
+                        <skipTests>true</skipTests>
                     </configuration>
                 </plugin>
             </plugins>
@@ -69,6 +70,7 @@
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>
+                    <skipTests>true</skipTests>
                 </configuration>
             </plugin>
             <plugin>
@@ -88,6 +90,7 @@
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
                             <finalName>mt-dbgen</finalName>
+                            <skipTests>true</skipTests>
                         </configuration>
                         <phase>package</phase>
                         <goals>

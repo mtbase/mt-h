@@ -1,7 +1,9 @@
 package ch.ethz.system.mt.tpch;
 
 import org.apache.commons.cli.*;
+import sun.misc.MessageUtils;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -98,7 +100,8 @@ public class dbgen {
         options.addOption("t", true,  "-- set number of tenants (default: 1)");
         options.addOption("m", true,  "-- set distribution mode (uniform=default, zipf");
         options.addOption("o", true,  "-- set the output directory (default: 'output'");
-        options.addOption("f", true,  "-- set the output files format <oracle|postgres> (default: 'oracle'");
+        options.addOption("f", true,  "-- set the output files format <oracle (with separator at end of each line)|"
+                + "postgres (no separator at line end)> (default: 'oracle'");
         options.addOption("p", true,  "-- set the number of parts the files should be divided into (default: 1)");
 
         CommandLineParser parser = new DefaultParser();
@@ -149,6 +152,11 @@ public class dbgen {
         System.out.println("database format: " + format.toString());
         System.out.println("number of parts: " + numberOfParts);
         System.out.println("########################################################");
+
+        // create output directory if non-existent
+        File outputDirFile = new File(outputDir);
+        if (!outputDirFile.exists())
+            outputDirFile.mkdirs();
 
         // calculate total row counts
         customerRowCount     = (int) calculateRowCount(CustomerGenerator.SCALE_BASE, scaleFactor, 1, 1);
