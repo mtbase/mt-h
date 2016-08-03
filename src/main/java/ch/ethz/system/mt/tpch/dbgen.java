@@ -101,7 +101,7 @@ public class dbgen {
         options.addOption("m", true,  "-- set distribution mode (uniform=default, zipf");
         options.addOption("o", true,  "-- set the output directory (default: 'output'");
         options.addOption("f", true,  "-- set the output files format <oracle (with separator at end of each line)|"
-                + "postgres (no separator at line end)> (default: 'oracle'");
+                + "postgres (no separator at line end)> (default: 'oracle')");
         options.addOption("p", true,  "-- set the number of parts the files should be divided into (default: 1)");
 
         CommandLineParser parser = new DefaultParser();
